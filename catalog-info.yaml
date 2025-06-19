@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: june19-test-db 
+  description: Secure Supply Chain Example for RAG Chatbot Application   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=june19-test-db  
+    janus-idp.io/tekton: june19-test-db 
+    backstage.io/kubernetes-id: june19-test-db 
+    backstage.io/techdocs-ref: dir:. 
+    quay.io/repository-slug: jdubrick-ai/june19-test-db
+  tags: ["ai", "llamacpp", "vllm", "python", "rag", "database"] 
+spec:
+  type: service
+  owner: user:guest 
+  lifecycle: experimental
+ 
